@@ -48,6 +48,18 @@ app.post('/formdata',(req,res)=>{
     res.sendFile(path.join(__dirname,'./views/form.html'))
 })
 
+app.set('view engine','ejs')
+app.set('views',path.join(__dirname,'./views'))
+
+app.get('/engine',(req,res)=>{
+    res.render('home',{title:'home'})
+})
+app.get('/about',(req,res)=>{
+    res.render('home',{title:'about'})
+})
+app.get('/contactus',(req,res)=>{
+    res.render('home',{title:'Contact'})
+})
 
 app.listen(5000,(req,res)=>{
 console.log("server listen on port 5000")
