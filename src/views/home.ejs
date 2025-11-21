@@ -2,8 +2,18 @@
 <html>
     <head>
         <title> view engins <%= title %></title>
+        <link rel="stylesheet" href="/static/custom.css">
     </head>
     <body>
+        <div class="w-screen h-[40px]  bg-gray-900 ">
+            <ul class="flex justify-evenly text-gray-200">
+                <% for(i=0;i<myroutes.length;i++){ %>
+                <li><a href="<%= myroutes[i]['route']%>">
+                    <%= myroutes[i]['tdata'] %></a></li>
+                <% } %>
+                <li><a href="/">Main</a></li>
+            </ul>
+        </div>
         <h1>Welcome to <%= title %> page</h1>
     </body>
 </html>

@@ -38,7 +38,7 @@ app.get('/',(req,res)=>{
  res.send("<h1 align='center'>welcome to express js</h1>")
 })
 
-app.get('/home',(req,res)=>{
+app.get('/home2',(req,res)=>{
     // console.log(path)
     res.sendFile(path.join(__dirname,'./views/index.html'))
 })
@@ -51,15 +51,27 @@ app.post('/formdata',(req,res)=>{
 app.set('view engine','ejs')
 app.set('views',path.join(__dirname,'./views'))
 
-app.get('/engine',(req,res)=>{
-    res.render('home',{title:'home'})
+let routes = [
+                {route:'/home',tdata:'home'},
+                {route:'/about',tdata:'about'},
+                {route:'/contactus',tdata:'contactus'},
+                {route:'/login',tdata:'login'},
+                {route:'/signup',tdata:'signup'},
+                {route:'/service',tdata:'service'},
+                {route:'/product',tdata:'product'},
+                {route:'/info',tdata:'info'},
+                {route:'/helpline',tdata:'helpline'}
+             ];
+
+routes.forEach((route)=>{
+
+console.log(route['tdata']);
+app.get(route['route'],(req,res)=>{
+    res.render('home',{title:route['tdata'],myroutes:routes})
 })
-app.get('/about',(req,res)=>{
-    res.render('home',{title:'about'})
+
 })
-app.get('/contactus',(req,res)=>{
-    res.render('home',{title:'Contact'})
-})
+    
 
 app.listen(5000,(req,res)=>{
 console.log("server listen on port 5000")
