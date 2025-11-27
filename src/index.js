@@ -51,6 +51,11 @@ app.post('/formdata',(req,res)=>{
 app.set('view engine','ejs')
 app.set('views',path.join(__dirname,'./views'))
 
+
+app.get('/test',(req,res)=>{
+    res.render('demo',{myname:"sanjeev"})
+})
+
 let routes = [
                 {route:'/home',tdata:'home'},
                 {route:'/about',tdata:'about'},
