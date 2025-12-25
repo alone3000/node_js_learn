@@ -65,7 +65,8 @@ let routes = [
                 {route:'/service',tdata:'service'},
                 {route:'/product',tdata:'product'},
                 {route:'/info',tdata:'info'},
-                {route:'/helpline',tdata:'helpline'}
+                {route:'/helpline',tdata:'helpline'},
+                {route:'/karan',tdata:'this is karan special page...'}
              ];
 
 routes.forEach((route)=>{
