@@ -1,0 +1,5 @@
+PORT = 4000
+DBNAME = 'ALONE'
+DBUSER = 'admin'
+DBPSW = 1234564
+username = 'alone3000'

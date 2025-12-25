@@ -57,6 +57,7 @@ app.get('/test',(req,res)=>{
 })
 
 let routes = [
+                {route:'/',tdata:'home'},
                 {route:'/home',tdata:'home'},
                 {route:'/about',tdata:'about'},
                 {route:'/contactus',tdata:'contactus'},
@@ -77,8 +78,14 @@ app.get(route['route'],(req,res)=>{
 })
 
 })
-    
+ 
+import dotenv from 'dotenv'
+dotenv.config({path:'./.env'})
 
-app.listen(5000,(req,res)=>{
-console.log("server listen on port 5000")
+let port = process.env.PORT
+
+console.log(process.env.DBPSW)
+
+app.listen(port,(req,res)=>{
+console.log(`server listen on port ${port}`)
 })
